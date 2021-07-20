@@ -65,7 +65,10 @@ export nnUNet_preprocessed="/XXX/nnUNet_preprocessed"
 export RESULTS_FOLDER="/XXX/nnUNet_trained_models"
 ```
 
-### Step 4: start training
+### Step 4: Experiment planning and preprocessing
+Refer to [Experiment planning and preprocessing](https://github.com/MIC-DKFZ/nnUNet#experiment-planning-and-preprocessing)
+
+### Step 5: start training
 start a single device training with `nnUNet_train` command, take a 3D full resolution U-Net as an example:
 ```
 nnUNet_train 3d_fullres nnUNetTrainerV2 [`task id` or `task folder name`] FOLD --npz
