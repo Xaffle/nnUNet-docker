@@ -1,7 +1,7 @@
 # nnUNet-docker
 An instruction to create a training for nnUNet. To start nnUNet training in a docker container for the first time, this is all you need. (DOGE)
 
-## Create an docker image for nnUNet training
+## Create a docker image for nnUNet training
 First of all, you should have a base image contains basic dependencies and pytorch. If you don't have one, you can pull one from docker hub, for example:  
 ```
 docker pull pytorch/pytorch:1.8.1-cuda11.1-cudnn8-devel
