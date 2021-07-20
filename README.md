@@ -45,12 +45,12 @@ The document structure and the naming rules of data files are fixed in nnUNet. Y
 Start a container with the command:
 ```
 docker run -it \
--v=(dir)/XXX:/XXX
---gpus=all
---rm
---name=DMH_Task001
---network=host
---ipc=host
+-v=(dir)/XXX:/XXX \
+--gpus=all \
+--rm \
+--name=DMH_Task001 \
+--network=host \
+--ipc=host \
 nnunet:base
 ```
 NOTE:
