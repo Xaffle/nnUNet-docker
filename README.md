@@ -21,16 +21,16 @@ RUN cd /nnUNet \
  && pip install --no-cache-dir -e . 
 ```
 
-For more applications to build docker images for nnUNet, please refer to: https://github.com/hubutui/nnUNet/tree/master/docker
+For more applications to build docker images for nnUNet, please refer to: [hubutui/nnUNet](https://github.com/hubutui/nnUNet/tree/master/docker)
 
 Then you can build the image:  
-`
+```
 docker build -t [image_tag] -f [dockerfile_path] .
-`
+```
 in my practice:
-`
+```
 docker build -t nnunet:base -f /nnUNet/docker/Dockerfile .
-`
+```
 
 ## Training
 Here only provide a fast step-by-step tutorial to start a training task by nnUNet docker. The detail official instruction of nnUNet training configuration and usage can be found in: [nnUNet](https://github.com/MIC-DKFZ/nnunet) and [Setting up Paths](https://github.com/MIC-DKFZ/nnUNet/blob/master/documentation/setting_up_paths.md#:~:text=nnUNet_raw_data_base%3A%20This%20is%20where%20nnU-Net%20finds%20the%20raw,in%20turn%20contains%20one%20subfolder%20for%20each%20Task).  
