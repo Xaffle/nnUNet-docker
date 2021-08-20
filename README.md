@@ -66,7 +66,11 @@ export RESULTS_FOLDER="/XXX/nnUNet_trained_models"
 ```
 
 ### Step 4: Experiment planning and preprocessing
-Refer to [Experiment planning and preprocessing](https://github.com/MIC-DKFZ/nnUNet#experiment-planning-and-preprocessing)
+Run this command:
+```
+nnUNet_plan_and_preprocess -t task_id --verify_dataset_integrity
+```
+For more information, referred to [Experiment planning and preprocessing](https://github.com/MIC-DKFZ/nnUNet#experiment-planning-and-preprocessing)
 
 ### Step 5: start training
 start a single device training with `nnUNet_train` command, take a 3D full resolution U-Net as an example:
@@ -82,5 +86,5 @@ It's really easy to execute inference process. Put the images to be predicted in
 nnUNet_predict -i `XXX/input` -o 'XXX/pred' -t 1 -m 3d_fullres -f all
 ```
 More instructions can be found [here](https://github.com/MIC-DKFZ/nnUNet#run-inference).  
-**NOTE:**
+**NOTE:**  
 The default number of epochs during training is 1000 which may be too long for specific cases, and the inference process will search for the trained model with filename contains "model_final_checkpoint" which will be not be generated untill all the training epochs finished. Change the number of epochs or change the reference model name is applicable by edit the nnUNet source code and rebuild, if you need to take a prediction with the intermediate model (whose filename contains "model_best" or "model_latest") without changing the source code, just rename any one of this two models to "model_final_checkpoint" (looks not elegant).
