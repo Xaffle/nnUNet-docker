@@ -53,7 +53,7 @@ docker run -it \
 --ipc=host \
 nnunet:base
 ```
-*NOTE:*  
+**NOTE:**
 1. `--ipc=host` is recommended to avoid some runtime error, refer to: [Here](https://github.com/MIC-DKFZ/nnUNet/blob/master/documentation/common_problems_and_solutions.md#nnu-net-training-in-docker-container-runtimeerror-unable-to-write-to-file-torch_781_2606105346);
 2. DO NOT forget to set parameter `--gpus`, otherwise the GPU will be invisible;
 3. The single device training (with command `nnUNet_train`) will run on GPU 0 inside the container, if you want to train on a specific GPU device of the host(eg. device 2), set the gpu as `--gpus="device=2"`, the device 2 will be visible inside the container as GPU 0.
@@ -81,6 +81,6 @@ It's really easy to execute inference process. Put the images to be predicted in
 ```
 nnUNet_predict -i `XXX/input` -o 'XXX/pred' -t 1 -m 3d_fullres -f all
 ```
-More instructions can be found [here](https://github.com/MIC-DKFZ/nnUNet#run-inference).
-*NOTE:*  
+More instructions can be found [here](https://github.com/MIC-DKFZ/nnUNet#run-inference).  
+**NOTE:**
 The default number of epochs during training is 1000 which may be too long for specific cases, and the inference process will search for the trained model with filename contains "model_final_checkpoint" which will be not be generated untill all the training epochs finished. Change the number of epochs or change the reference model name is applicable by edit the nnUNet source code and rebuild, if you need to take a prediction with the intermediate model (whose filename contains "model_best" or "model_latest") without changing the source code, just rename any one of this two models to "model_final_checkpoint" (looks not elegant).
